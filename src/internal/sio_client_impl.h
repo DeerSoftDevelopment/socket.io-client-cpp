@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #ifdef _WIN32
+#include <malloc.h>
 #define _WEBSOCKETPP_CPP11_THREAD_
 #define BOOST_ALL_NO_LIB
 //#define _WEBSOCKETPP_CPP11_RANDOM_DEVICE_
