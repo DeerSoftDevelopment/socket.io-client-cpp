@@ -8,7 +8,6 @@
 #include "internal/sio_client_impl.h"
 
 using namespace websocketpp;
-using boost::posix_time::milliseconds;
 using std::stringstream;
 
 namespace sio
@@ -124,5 +123,20 @@ namespace sio
     {
         m_impl->set_reconnect_delay_max(millis);
     }
-    
+
+    void client::set_logs_default()
+    {
+        m_impl->set_logs_default();
+    }
+
+    void client::set_logs_quiet()
+    {
+        m_impl->set_logs_quiet();
+    }
+
+    void client::set_logs_verbose()
+    {
+        m_impl->set_logs_verbose();
+    }
+
 }
