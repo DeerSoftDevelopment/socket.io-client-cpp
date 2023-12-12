@@ -31,13 +31,7 @@ typedef websocketpp::config::asio_client client_config;
 #endif //SIO_TLS
 #endif //DEBUG
 
-#if SIO_TLS
-#include <asio/ssl/context.hpp>
-#endif
-
-#include <asio/steady_timer.hpp>
-#include <asio/error_code.hpp>
-#include <asio/io_service.hpp>
+#include "../asio_prefix.h"
 
 #include <memory>
 #include <map>

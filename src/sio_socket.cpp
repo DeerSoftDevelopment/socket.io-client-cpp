@@ -1,8 +1,7 @@
 #include "sio_socket.h"
 #include "internal/sio_packet.h"
 #include "internal/sio_client_impl.h"
-#include <asio/steady_timer.hpp>
-#include <asio/error_code.hpp>
+#include "asio_prefix.h"
 #include <queue>
 #include <chrono>
 #include <cstdarg>

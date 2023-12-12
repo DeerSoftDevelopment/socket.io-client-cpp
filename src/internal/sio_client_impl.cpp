@@ -319,7 +319,7 @@ namespace sio
         if(!m_ping_timeout_timer)
         {
             m_ping_timeout_timer.reset(new asio::steady_timer(m_client.get_io_service()));
-            std::error_code timeout_ec;
+            asio::error_code timeout_ec;
             m_ping_timeout_timer->expires_from_now(milliseconds(m_ping_timeout), timeout_ec);
             m_ping_timeout_timer->async_wait(std::bind(&client_impl::timeout_pong, this, std::placeholders::_1));
         }
