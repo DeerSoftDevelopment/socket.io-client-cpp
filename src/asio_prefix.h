@@ -1,5 +1,6 @@
 #pragma once
 
+#ifndef ASIO_STANDALONE
 #if SIO_TLS
 #include <boost/asio/ssl/context.hpp>
 #endif
@@ -7,7 +8,16 @@
 #include <boost/asio/steady_timer.hpp>
 #include <boost/system/error_code.hpp>
 #include <boost/asio/io_service.hpp>
+#else
+#if SIO_TLS
+#include <asio/ssl/context.hpp>
+#endif
 
+#include <asio/steady_timer.hpp>
+#include <asio/io_service.hpp>
+#endif
+
+#ifndef ASIO_STANDALONE
 namespace asio {
     using namespace boost::asio;
     
@@ -49,3 +59,4 @@ namespace asio {
     using boost::system::error_code;
     namespace errc = boost::system::errc;
 } // namespace asio
+#endif
